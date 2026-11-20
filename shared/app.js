@@ -61,6 +61,8 @@
     return `<svg viewBox="0 0 300 210" role="img" aria-label="Preview of ${esc(label)}" preserveAspectRatio="xMidYMid slice"><rect width="300" height="210" style="fill:${BG}"/>${body}</svg>`;
   }
   window.KEPT_PREVIEW = preview;
+  // Realistic mock-up (shared/mockups.js) when available, simple SVG otherwise.
+  const pic = (p, opts) => (window.KEPT_MOCK && window.KEPT_MOCK(p, opts)) || preview(p.kind, p.name);
 
   /* ---------- Renderers ---------- */
   const R = {
@@ -135,7 +137,7 @@
     bundles(el) {
       el.innerHTML = K.bundles.map((b, i) => `
         <article class="bundle${b.featured ? " bundle--featured" : ""}" data-reveal style="--d:${i * 90}ms">
-          <div class="bundle__preview">${preview(b.kind, b.name)}</div>
+          <div class="bundle__preview">${pic(b)}</div>
           <div class="bundle__body">
             ${b.featured ? `<span class="pkg__badge">Best value</span>` : ""}
             <h3 class="bundle__name">${esc(b.name)}</h3>
@@ -165,11 +167,12 @@
     products(el) {
       el.innerHTML = K.products.map((p, i) => `
         <button class="prod" data-cat="${esc(p.cat)}" data-open-product="product:${i}" data-reveal style="--d:${(i % 6) * 60}ms">
-          <span class="prod__preview">${preview(p.kind, p.name)}</span>
+          <span class="prod__preview">${pic(p, { badge: false })}</span>
           <span class="prod__body">
             <span class="prod__cat">${esc(p.cat)}</span>
             <span class="prod__name">${esc(p.name)}</span>
-            <span class="prod__price">${usd(p.price)}</span>
+            ${p.fmt ? `<span class="prod__fmt">${esc(p.fmt)} · instant download</span>` : ""}
+            <span class="prod__foot"><span class="prod__price">${usd(p.price)} <small>${zar(p.price)}</small></span><span class="prod__view">Preview</span></span>
           </span>
         </button>`).join("");
     },
@@ -292,9 +295,9 @@
       const p = type === "bundle" ? K.bundles[i] : K.products[i];
       openModal(`
         <div class="pmodal">
-          <div class="pmodal__preview">${preview(p.kind, p.name)}</div>
+          <div class="pmodal__preview">${pic(p)}</div>
           <div class="pmodal__info">
-            <span class="prod__cat">${type === "bundle" ? "Bundle" : esc(p.cat)} · instant download</span>
+            <span class="prod__cat">${type === "bundle" ? "Bundle" : esc(p.cat)} · instant download${p.fmt ? " · " + esc(p.fmt) : ""}</span>
             <h2 class="pmodal__name">${esc(p.name)}</h2>
             <p class="pmodal__price">${usd(p.price)} <small>${zar(p.price)}</small></p>
             <h3 class="pmodal__h">What's included</h3>

@@ -16,7 +16,7 @@ Open `index.html` at the root to compare all three.
 - **Home** — "You run the business. We handle the rest.", founding-offer banner, 4 service cards, 3-step how it works, "Hi, I'm Zoe" intro.
 - **Executive Support / Social Media** — 3 packages each, prices in USD with rand (≈ R16.80/$), "Good to know" FAQ.
 - **Websites** — $500 package, add-ons, sample websites in browser frames (Emerald & Olive links to the live Wix sample; the salon and estate agency show "Coming soon").
-- **Shop** — bundles, category filters, product cards with preview pictures, larger preview with "What's included" on click, free-download email sign-up.
+- **Shop** — bundles, category filters, and product cards with realistic mock-ups (printed pages, laptops, phones, a tablet and planners on a desk, showing real sample content). Clicking a card opens a larger preview with "What's included", plus a free-download email sign-up. Each product's sample content is its `demo` in `shared/content.js`; the scenes are drawn by `shared/mockups.js` + `shared/mockups.css`.
 - **Contact** — 30-minute booking card, message form, hello@keptoffice.com. No phone number.
 - DM Serif Display + Plus Jakarta Sans, ZT monogram in header and footer, mobile-first, SEO title/description, cookie notice, privacy and refund policy pop-ups, keyboard and screen-reader friendly, respects "reduce motion".
 
