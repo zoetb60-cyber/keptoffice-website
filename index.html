@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kept Office — Website Options</title>
+  <meta name="description" content="Three website design options for Kept Office.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink: #1c1c22; --muted: #62626e; --line: #e8e8ee; --bg: #fafafa; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Plus Jakarta Sans", system-ui, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
+    .wrap { width: min(1180px, 100% - 32px); margin: 0 auto; padding: clamp(48px, 8vw, 96px) 0; }
+    h1 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.1; margin: 0 0 12px; }
+    h1 em { color: #a35d69; }
+    .lede { color: var(--muted); font-size: 1.1rem; max-width: 60ch; margin: 0 0 48px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    a.opt { display: flex; flex-direction: column; text-decoration: none; color: inherit; background: #fff; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; transition: transform .3s, box-shadow .3s; }
+    a.opt:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(0,0,0,.3); }
+    .swatch { height: 200px; display: grid; place-items: center; position: relative; }
+    .swatch span { font-family: "DM Serif Display", serif; font-size: 2.2rem; }
+    .dots { position: absolute; bottom: 16px; left: 20px; display: flex; gap: 6px; }
+    .dots i { width: 18px; height: 18px; border-radius: 50%; border: 2px solid rgba(255,255,255,.8); box-shadow: 0 2px 6px rgba(0,0,0,.15); }
+    .body { padding: 22px 24px 26px; }
+    .body h2 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: 1.6rem; margin: 0 0 6px; }
+    .body p { color: var(--muted); margin: 0 0 14px; font-size: .95rem; }
+    .go { font-weight: 700; font-size: .92rem; }
+    .o1 .swatch { background: linear-gradient(135deg, #fff 0%, #fbf1f0 55%, #f5dfde 100%); color: #a35d69; }
+    .o2 .swatch { background: radial-gradient(circle at 70% 40%, #ff8a6b 0 60px, transparent 61px), #0e7c6b; color: #fff; }
+    .o3 .swatch { background: linear-gradient(120deg, #0f1b3d, #1f3fa6); color: #d4af37; }
+    footer { color: var(--muted); font-size: .85rem; margin-top: 48px; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; max-width: 520px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Kept Office — <em>three website options</em></h1>
+    <p class="lede">Each option follows the website brief: one page with a tab menu (Home, Executive Support, Social Media, Websites, Shop, Contact), live prices in USD and rand, a filterable template shop with previews, and booking + contact forms.</p>
+    <div class="grid">
+      <a class="opt o1" href="option-1-blush/">
+        <div class="swatch"><span>Blush</span><div class="dots"><i style="background:#fff"></i><i style="background:#f5dfde"></i><i style="background:#a35d69"></i></div></div>
+        <div class="body"><h2>Option 1 · White &amp; Blush</h2><p>Soft, elegant and airy. White with a dash of light shadow pink, arched imagery and floating task cards.</p><span class="go">Open option 1 →</span></div>
+      </a>
+      <a class="opt o2" href="option-2-emerald/">
+        <div class="swatch"><span>Emerald &amp; Coral</span><div class="dots"><i style="background:#0e7c6b"></i><i style="background:#ff8a6b"></i><i style="background:#fff"></i></div></div>
+        <div class="body"><h2>Option 2 · Emerald &amp; Coral</h2><p>The brief's default palette. Interactive hero: a spotlight lens and parallax photos follow your cursor.</p><span class="go">Open option 2 →</span></div>
+      </a>
+      <a class="opt o3" href="option-3-royal/">
+        <div class="swatch"><span>Royal &amp; Gold</span><div class="dots"><i style="background:#0f1b3d"></i><i style="background:#1f3fa6"></i><i style="background:#d4af37"></i></div></div>
+        <div class="body"><h2>Option 3 · Royal Blue &amp; Gold</h2><p>Editorial and executive. Navy hero with a live "weekly brief", gold details and overlapping stat bar.</p><span class="go">Open option 3 →</span></div>
+      </a>
+    </div>
+    <footer>Design options prepared for Kept Office · keptoffice.com</footer>
+  </main>
+</body>
+</html>
