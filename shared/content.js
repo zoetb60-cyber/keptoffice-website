@@ -8,8 +8,8 @@ window.KEPT = {
     name: "Kept Office",
     email: "hello@keptoffice.com",
     instagram: "https://instagram.com/keptoffice",
-    // TODO: paste your Google Calendar appointment-schedule link here
-    bookingUrl: "https://calendar.google.com/",
+    // Google Calendar appointment-schedule link (free 30-minute discovery call)
+    bookingUrl: "https://calendar.app.google/33wXVy1uMqBZSU277",
     // TODO: optional — a Formspree (or similar) endpoint. If empty, forms open the visitor's email app instead.
     formEndpoint: "",
     zarRate: 16.8,
